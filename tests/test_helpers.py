@@ -36,6 +36,6 @@ class TestHelpscoutHelper(unittest.TestCase):
         self.assertTrue(decorator(request))
 
         # Invalid signature should return a response code of 401
-        request.META['HTTP_X_HELPSCOUT_SIGNATURE'] = u'234'
+        request.META['HTTP_X_HELPSCOUT_SIGNATURE'] = '234'
         response = decorator(request)
         self.assertEquals(401, response.status_code)
